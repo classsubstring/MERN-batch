@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+</head>
+<body>
+    <div  >
+        <a href="about.html">About page</a>
+        <a href="services.html">Services Page</a>
+        <a href="index.html">Index Page</a>
+      <a href="contact.html">Contact us</a>
+ </div>
+
+    <div>
+
+        <h1 id="heading1">Contact us</h1>
+      
+        <img class="image_group_1" src="images/photo_6219566661762139931_y.jpg" alt="Contact us image " title="Durgesh Pic">
+        <p>From this page you can reach to us</p>
+        <p>9839466732</p>
+
+<!-- 
+        <table border="1px">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Phone
+                </th>
+            </tr>
+
+            <tr>
+                <td>Ramesh</td>
+                <td>
+                    ramesh@gmail.com
+                </td>
+                <td>
+                    235235235
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    ankit
+                </td>
+                <td>
+                    ankit@gmail.com
+                </td>
+                <td>
+                    235235
+                </td>
+            </tr>
+        </table> -->
+
+       <form class="contact_form" action="register.html"  method="post">
+
+        <table >
+            <tr>
+                <th colspan="2">Fill this forms correctly</th>
+            </tr>
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    <input type="text"  name="username" placeholder="Enter here" />
+                </td>
+            </tr>
+            <tr>
+                <td>    Email</td>
+                <td>
+                    <input type="email" name="email" placeholder="Enter here">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Phone</td>
+                <td>
+                    <input type="number" name="phone" placeholder="Enter here">
+                </td>
+                
+            </tr>
+
+            <tr>
+                <td>
+                    Query
+                </td>
+                <td>
+                    <textarea name="query" placeholder="Enter your query here"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Gender
+                </td>
+                <td>
+                    <input  value="male" type="radio" name="gender"> Male <input type="radio" value="female" name="gender"> Female
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Intrested Corses
+                </td>
+                <td>
+                    <select name="course" >
+                        <option value="c" >C language</option>
+                        <option value="java" >Java</option>
+                        <option value="python" >Python</option>
+                        <option  value="javascript">Javascript</option>
+                        <option  value="go">Go</option>
+        
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date of Birth
+                </td>
+                <td>
+                    <input name="dob" type="date">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Skills
+                </td>
+
+                <td>
+                    <input name="skill1" value="coding" type="checkbox">Coding <input type="checkbox" name="skill2" value="playing cricket">Playing Cricket <input type="checkbox" name="skill3" value="watching movies"> Watching Movies
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center;" colspan="2">
+
+        <!-- <button type="submit">Submit</button> -->
+        <input type="submit"  value="Submit your query">
+                </td>
+            </tr>
+        </table>
+
+
+      
+      
+
+    </form>
+    </div>
+</body>
+</html>

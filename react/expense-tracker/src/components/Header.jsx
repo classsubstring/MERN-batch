@@ -15,8 +15,16 @@ export default function Header() {
           hoverColor={"hover:bg-blue-500"}
           backgroundColor={"bg-blue-900"}
           text={"Login"}
+          clickFun={() => {
+            console.log("Login button clicked");
+          }}
         />
-        <MyButton text={"Register"} />
+        <MyButton
+          clickFun={() => {
+            console.log("register fun");
+          }}
+          text={"Register"}
+        />
       </div>
     </nav>
   );

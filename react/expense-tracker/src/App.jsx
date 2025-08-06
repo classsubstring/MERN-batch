@@ -16,6 +16,7 @@ import { FaApple, FaPaintBrush, FaCloud, FaRobot } from "react-icons/fa";
 import { SiFlutter, SiFigma } from "react-icons/si";
 import { MdSecurity } from "react-icons/md";
 import Heading from "./components/Heading";
+import AddExpense from "./components/expense/AddExpense";
 function App() {
   // const buttons = [
   //   "click me",
@@ -27,8 +28,9 @@ function App() {
   //   "update",
   // ];
 
-  const services = [
+  const [services, setServices] = useState([
     {
+      id: 1,
       title: "Android Development",
       content:
         "We build high-performance Android apps tailored to your business goals using Java and Kotlin.",
@@ -36,6 +38,7 @@ function App() {
       icon: <IoLogoAndroid size={80} />,
     },
     {
+      id: 2,
       title: "Web Development",
       content:
         "Responsive and scalable web applications built using the latest frontend and backend technologies.",
@@ -43,6 +46,7 @@ function App() {
       icon: <CgWebsite size={80} />,
     },
     {
+      id: 3,
       title: "iOS Development",
       content:
         "Native iOS apps developed with Swift to deliver seamless performance and stunning user experience.",
@@ -50,6 +54,7 @@ function App() {
       icon: <FaApple size={80} />,
     },
     {
+      id: 4,
       title: "UI/UX Design",
       content:
         "Crafting intuitive and visually appealing interfaces using Figma and Adobe XD.",
@@ -57,6 +62,7 @@ function App() {
       icon: <FaPaintBrush size={80} />,
     },
     {
+      id: 5,
       title: "Cloud Services",
       content:
         "Deploy, manage, and scale your applications with AWS and Azure cloud platforms.",
@@ -64,6 +70,7 @@ function App() {
       icon: <FaCloud size={80} />,
     },
     {
+      id: 6,
       title: "AI & Machine Learning",
       content:
         "Integrate intelligent AI models into your software to enhance user experience and automation.",
@@ -71,6 +78,7 @@ function App() {
       icon: <FaRobot size={80} />,
     },
     {
+      id: 7,
       title: "Flutter Development",
       content:
         "Cross-platform mobile apps with a single codebase using Flutter and Dart.",
@@ -78,6 +86,7 @@ function App() {
       icon: <SiFlutter size={80} />,
     },
     {
+      id: 8,
       title: "Azure Solutions",
       content:
         "Leverage Microsoft Azure for cloud storage, AI tools, and enterprise-grade deployments.",
@@ -85,17 +94,24 @@ function App() {
       icon: <CgWebsite size={80} />,
     },
     {
+      id: 9,
       title: "Cybersecurity",
       content:
         "Protect your systems with advanced security protocols, firewalls, and threat detection.",
       buttonText: "Secure Now",
       icon: <MdSecurity size={80} />,
     },
-  ];
+  ]);
+
+  function deleteService(id) {
+    const newServices = services.filter((serv) => serv.id != id);
+    setServices(newServices);
+  }
 
   return (
     <div>
       <Header />
+      <AddExpense />
       <Banner />
 
       <div>
@@ -103,12 +119,15 @@ function App() {
       </div>
 
       <div className="flex px-20 gap-5 flex-wrap">
-        {services.map((card) => (
+        {services.map((card, index) => (
           <Card
+            key={index}
             title={card.title}
             content={card.content}
             buttonText={card.buttonText}
             icon={card.icon}
+            id={card.id}
+            deleteService={deleteService}
           />
         ))}
 

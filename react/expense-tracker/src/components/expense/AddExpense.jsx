@@ -1,7 +1,24 @@
-import { useState } from "react";
-import { RxCross2 } from "react-icons/rx";
+import { useState, useEffect } from "react";
+
+import ExpenseView from "./ExpenseView";
 
 function AddExpense() {
+  useEffect(() => {
+    //my code inside useEffect
+    console.log("component started ");
+    setTitle("Launch");
+    setExpenses([
+      {
+        title: "Mobile Recharge",
+        description: "This is initial data",
+        expDate: "01/02/2002",
+        category: "food",
+      },
+    ]);
+  }, []);
+
+  // component states[variables]
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [expDate, setExpDate] = useState("");
@@ -10,8 +27,12 @@ function AddExpense() {
     title: "",
     description: "",
   });
-
   const [expenses, setExpenses] = useState([]);
+  // END of variabels
+
+  useEffect(() => {
+    console.log("form has error:useEffect");
+  }, [error]);
 
   function handleFormChange(event) {
     // console.log(event.target.name);
@@ -95,15 +116,7 @@ function AddExpense() {
 
         <div className="expense_container">
           {expenses.map((exp, index) => {
-            return (
-              <div className="p-3 relative bg-slate-300 rounded-xl m-1">
-                <h1>{exp.title}</h1>
-                <p>{exp.description}</p>
-                <button className="absolute top-4 right-4 p-3 hover:bg-slate-700 hover:text-white rounded-full cursor-pointer transition-all duration-100">
-                  <RxCross2 />
-                </button>
-              </div>
-            );
+            return <ExpenseView expense={exp} />;
           })}
         </div>
       </div>

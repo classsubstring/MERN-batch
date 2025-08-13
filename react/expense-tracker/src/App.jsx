@@ -17,6 +17,8 @@ import { SiFlutter, SiFigma } from "react-icons/si";
 import { MdSecurity } from "react-icons/md";
 import Heading from "./components/Heading";
 import AddExpense from "./components/expense/AddExpense";
+import { ToastContainer, Flip } from "react-toastify";
+import ShowPost from "./components/apicalling/ShowPosts";
 function App() {
   // const buttons = [
   //   "click me",
@@ -110,7 +112,19 @@ function App() {
 
   return (
     <div>
+      <ToastContainer
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Header />
+      <ShowPost />
       <AddExpense />
       <Banner />
 

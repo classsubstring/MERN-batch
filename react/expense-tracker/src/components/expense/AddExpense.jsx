@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import ExpenseView from "./ExpenseView";
+import { toast } from "react-toastify";
 
 function AddExpense() {
   useEffect(() => {
@@ -32,6 +33,11 @@ function AddExpense() {
 
   useEffect(() => {
     console.log("form has error:useEffect");
+    //attatch
+    return () => {
+      //cleanup
+      //deattatch
+    };
   }, [error]);
 
   function handleFormChange(event) {
@@ -101,6 +107,7 @@ function AddExpense() {
       title: "",
       description: "",
     });
+    toast.success("Expense Added");
   }
   return (
     <div className="m-4 flex gap-3  justify-center">

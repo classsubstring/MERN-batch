@@ -13,23 +13,30 @@ function ShowWather() {
   const [city, setCity] = useState(selectedCity);
 
   useEffect(() => {
-    setLoading(true);
-    getWeather(city)
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        toast.success("received data");
-        setWeatherData(data);
-        setLoading(false);
-        // ...
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoading(false);
-      });
+    // setLoading(true);
+
+    async function fetchData() {
+      const data = await getWeather(city);
+      setWeatherData(data);
+    }
+    fetchData();
+
+    // getWeather(city)
+    //   .then((response) => {
+    //     console.log(response);
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //     toast.success("received data");
+    //     setWeatherData(data);
+    //     setLoading(false);
+    //     // ...
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     setLoading(false);
+    //   });
   }, []);
 
   return (

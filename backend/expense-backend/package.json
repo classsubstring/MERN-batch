@@ -1,0 +1,19 @@
+{
+  "name": "expense-backend",
+  "version": "1.0.0",
+  "description": "This is expense backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon src/server.js"
+  },
+  "author": "Durgesh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

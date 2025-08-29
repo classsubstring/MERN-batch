@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 const expenseRouter = Router();
-const expenses = [
+let expenses = [
   {
     id: 1212,
     title: "Launch1",
@@ -46,10 +46,29 @@ expenseRouter.post("/expenses", (req, resp) => {
 
 expenseRouter.delete("/expenses/:expenseId", (req, resp) => {
   const { expenseId } = req.params;
-
   expenses = expenses.filter((ex) => ex.id != expenseId);
-
   resp.send("Expense Deleted");
+});
+
+// updating expense
+
+expenseRouter.put("/expenses/:expId", (req, resp) => {
+  const { expId } = req.params;
+  const { title, description } = req.body;
+
+  expenses = expenses.map((exp) => {
+    if (exp.id == expId) {
+      /// update fir return
+      exp.title = title;
+      exp.description = description;
+      return exp;
+    } else {
+      return exp;
+    }
+  });
+
+  resp.send("Expense updated ")
+
 });
 
 export default expenseRouter;

@@ -1,18 +1,8 @@
-import { Router } from "express";
-
+import e, { Router } from "express";
+import { listUser, createUser } from "../controllers/user.controller.js";
 const userRouter = Router();
 
-const users = [
-  {
-    name: "Ankit",
-    email: "ankit@gmail.com",
-    isActive: true,
-  },
-];
-
 //list user
-userRouter.get("/users", (req, resp) => {
-  resp.json(users);
-});
-
+userRouter.get("/users", listUser);
+userRouter.post("/users", createUser);
 export default userRouter;

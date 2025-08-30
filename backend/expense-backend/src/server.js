@@ -4,7 +4,7 @@ import expenseRouter from "./routes/expense.route.js";
 import userRouter from "./routes/user.route.js";
 import { authMiddleware } from "./middlewares/auth.middleware.js";
 import { notFount, errorHandler } from "./errors/error.js";
-
+import connectDb from "./config/db.js";
 // express to get app
 const app = express();
 

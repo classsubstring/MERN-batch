@@ -18,4 +18,8 @@ expenseRouter.post("/expenses", createExpense);
 expenseRouter.delete("/expenses/:expenseId", deleteExpense);
 // updating expense
 expenseRouter.put("/expenses/:expId", updateExpense);
+
+//search
+expenseRouter.get("/expenses/search/{keyword}", (req, res) => {});
+
 export default expenseRouter;

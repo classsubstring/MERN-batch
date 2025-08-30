@@ -1,3 +1,5 @@
+import Expense from "../models/expense.js";
+
 let expenses = [
   {
     id: 1212,
@@ -26,16 +28,26 @@ export const getExpense = (req, resp) => {
   resp.json(ex);
 };
 //create expense
-export const createExpense = (req, resp) => {
+export const createExpense = async (req, resp) => {
   console.log(req.body);
-  const { id, title, description } = req.body;
+  const { title, description, rs, hidden, paymentMethod } = req.body;
 
-  expenses.push({
+  const ob = await Expense.create({
     title,
     description,
-    id,
+    paymentMethod,
+    rs,
+    hidden,
   });
-  resp.send("Expense Created");
+
+  //save in database
+
+  // expenses.push({
+  //   title,
+  //   description,
+  //   id,
+  // });
+  resp.status(201).json(ob);
 };
 
 //delete expense

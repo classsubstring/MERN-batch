@@ -4,7 +4,7 @@ const expenseSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      require: true,
+      required: true,
     },
     description: {
       type: String,
@@ -12,7 +12,7 @@ const expenseSchema = new mongoose.Schema(
     },
     rs: {
       type: Number,
-      require: true,
+      required: true,
       min: 0,
     },
     hidden: {
@@ -26,7 +26,7 @@ const expenseSchema = new mongoose.Schema(
     paymentMethod: {
       type: String,
       default: "cash",
-      require: true,
+      required: true,
     },
     screenshot: {
       type: String,

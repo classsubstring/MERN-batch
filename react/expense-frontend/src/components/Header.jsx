@@ -13,12 +13,13 @@ function Header() {
 
           {/* Menu Links */}
           <nav className="hidden md:flex space-x-6">
-            <a
+            <Link
               href="#"
+              to={"/dashboard"}
               className="text-gray-600 hover:text-gray-900 transition"
             >
               Dashboard
-            </a>
+            </Link>
             <a
               href="#"
               className="text-gray-600 hover:text-gray-900 transition"
@@ -42,7 +43,7 @@ function Header() {
           {/* Auth Buttons */}
           <div className="flex space-x-4">
             <button className="text-gray-600 hover:text-gray-900 transition">
-              Login
+              <Link to={"/login"}> Login</Link>
             </button>
             <button className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
               <Link to={"/signup"}> Singup</Link>

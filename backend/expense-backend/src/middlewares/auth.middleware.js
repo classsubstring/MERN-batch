@@ -8,6 +8,8 @@ export const authMiddleware = (req, resp, next) => {
   if (authorization == "123456") {
     next();
   } else {
-    resp.send("You are not granted permission to access this resource..");
+    resp
+      .status(403)
+      .send("You are not granted permission to access this resource..");
   }
 };

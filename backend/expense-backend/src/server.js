@@ -5,8 +5,15 @@ import userRouter from "./routes/user.route.js";
 import { authMiddleware } from "./middlewares/auth.middleware.js";
 import { notFount, errorHandler } from "./errors/error.js";
 import connectDb from "./config/db.js";
+import cors from "cors";
 // express to get app
 const app = express();
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 
 //it will parse your json
 app.use(express.json());
